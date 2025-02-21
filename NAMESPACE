@@ -1,0 +1,3 @@
+useDynLib(FuzzyFishHSRCpp, .registration=TRUE)
+importFrom(Rcpp, evalCpp)
+exportPattern("^[[:alpha:]]+")
