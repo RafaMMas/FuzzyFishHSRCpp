@@ -11,3 +11,4 @@ Imports: Rcpp (>= 1.0.11)
 LinkingTo: Rcpp
 URL: https://github.com/RafaMMas/FuzzyFishHSRCpp
 BugReports: https://github.com/RafaMMas/FuzzyFishHSRCpp/issues
+RoxygenNote: 7.2.3
