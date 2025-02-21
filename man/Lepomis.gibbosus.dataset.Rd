@@ -21,7 +21,7 @@ A data frame with X rows and Y columns:
 Source of the dataset (e.g., study, publication, or fieldwork details).
 }
 \usage{
-data(Lepomis.gibbosus.dataset)
+Lepomis.gibbosus.dataset
 }
 \description{
 Lepomis gibbosus Dataset

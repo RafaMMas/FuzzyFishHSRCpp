@@ -8,7 +8,7 @@
 This object represents the optimal FRBS model developed for predicting the habitat suitability
 of \emph{Lepomis gibbosus} based on key environmental variables.}
 \usage{
-data(Lepomis.gibbosus.FRBS)
+Lepomis.gibbosus.FRBS
 }
 \description{
 Optimal Fuzzy Rule-Based System (FRBS) Model for \emph{Lepomis gibbosus}

@@ -68,7 +68,7 @@ Create.FRBS.R <- function(ImpVariables, Range, MFfunction, MFparameters, Consequ
 #' @name Lepomis.gibbosus.dataset  
 #' @docType data  
 #' @keywords datasets  
-#' @usage data(Lepomis.gibbosus.dataset)  
+#' @usage Lepomis.gibbosus.dataset  
 NULL  
 
 #' Optimal Fuzzy Rule-Based System (FRBS) Model for *Lepomis gibbosus*  
@@ -79,5 +79,5 @@ NULL
 #' @name Lepomis.gibbosus.FRBS  
 #' @docType data  
 #' @keywords datasets  
-#' @usage data(Lepomis.gibbosus.FRBS)  
+#' @usage Lepomis.gibbosus.FRBS  
 NULL  
