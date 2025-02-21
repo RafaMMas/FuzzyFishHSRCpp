@@ -11,6 +11,10 @@
 #' @export
 #'
 #' @examples
+#' 
+#' data(Lepomis.gibbosus.dataset)  
+#' data(Lepomis.gibbosus.FRBS)  
+#' 
 #' PlotMF(FRBS = Lepomis.gibbosus.FRBS, n.pt = 9999,
 #' data = NULL,
 #' Title = "Lepomis gibbosus")

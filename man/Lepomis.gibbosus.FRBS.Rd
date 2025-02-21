@@ -3,14 +3,17 @@
 \docType{data}
 \name{Lepomis.gibbosus.FRBS}
 \alias{Lepomis.gibbosus.FRBS}
-\title{Optimal model Fuzzy Rule Based System (FRBS) for Lepomis gibbosus}
-\format{
-An object of class \code{list} of length 5.
-}
+\title{Optimal Fuzzy Rule-Based System (FRBS) Model for \emph{Lepomis gibbosus}
+
+This object represents the optimal FRBS model developed for predicting the habitat suitability
+of \emph{Lepomis gibbosus} based on key environmental variables.}
 \usage{
-Lepomis.gibbosus.FRBS
+data(Lepomis.gibbosus.FRBS)
 }
 \description{
-Optimal model Fuzzy Rule Based System (FRBS) for Lepomis gibbosus
+Optimal Fuzzy Rule-Based System (FRBS) Model for \emph{Lepomis gibbosus}
+
+This object represents the optimal FRBS model developed for predicting the habitat suitability
+of \emph{Lepomis gibbosus} based on key environmental variables.
 }
 \keyword{datasets}

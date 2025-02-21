@@ -8,6 +8,10 @@
 #' @export
 #'
 #' @examples
+#' 
+#' data(Lepomis.gibbosus.dataset)  
+#' data(Lepomis.gibbosus.FRBS)
+#' 
 #' Memberships <- FUZZIFY.FRBS.Fast(Data =
 #' Lepomis.gibbosus.dataset[,Lepomis.gibbosus.FRBS$ImpVariables],
 #' FRBS = Lepomis.gibbosus.FRBS)

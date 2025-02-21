@@ -3,14 +3,30 @@
 \docType{data}
 \name{Lepomis.gibbosus.dataset}
 \alias{Lepomis.gibbosus.dataset}
-\title{Lepomis gibbosus dataset continaing four microhabitat variables: Velocity, Depth, Substrate and Cover and its presence (1) and absneec (0).}
+\title{Lepomis gibbosus Dataset
+
+This dataset contains four microhabitat variables: Velocity, Depth, Substrate, and Cover,
+along with the presence (1) or absence (0) of \emph{Lepomis gibbosus}.}
 \format{
-An object of class \code{data.frame} with 1293 rows and 11 columns.
+A data frame with X rows and Y columns:
+\describe{
+\item{Velocity}{Water velocity at the sampling site (units?)}
+\item{Depth}{Water depth at the sampling site (units?)}
+\item{Substrate}{Type of substrate present (categorical or numerical?)}
+\item{Cover}{Presence of cover structures (categorical or numerical?)}
+\item{Presence}{Binary indicator: 1 (present) or 0 (absent)}
+}
+}
+\source{
+Source of the dataset (e.g., study, publication, or fieldwork details).
 }
 \usage{
-Lepomis.gibbosus.dataset
+data(Lepomis.gibbosus.dataset)
 }
 \description{
-Lepomis gibbosus dataset continaing four microhabitat variables: Velocity, Depth, Substrate and Cover and its presence (1) and absneec (0).
+Lepomis gibbosus Dataset
+
+This dataset contains four microhabitat variables: Velocity, Depth, Substrate, and Cover,
+along with the presence (1) or absence (0) of \emph{Lepomis gibbosus}.
 }
 \keyword{datasets}

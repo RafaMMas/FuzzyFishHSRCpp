@@ -22,6 +22,10 @@ a 4 by 4 plot of the membership functions for each input variable
 Function to plot the membership functions
 }
 \examples{
+
+data(Lepomis.gibbosus.dataset)  
+data(Lepomis.gibbosus.FRBS)  
+
 PlotMF(FRBS = Lepomis.gibbosus.FRBS, n.pt = 9999,
 data = NULL,
 Title = "Lepomis gibbosus")
