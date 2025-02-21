@@ -13,7 +13,7 @@ Create.FRBS.R(ImpVariables, Range, MFfunction, MFparameters, Consequents)
 
 \item{MFfunction}{the selected membership function}
 
-\item{MFparameters}{the parameters of the membership functions. It should be a matrix with as many columns as fuzzy sets. The columns for each variable must include the variable name as indicated in *ImpVariables*.}
+\item{MFparameters}{the parameters of the membership functions. It should be a matrix with as many columns as fuzzy sets. The columns for each variable must include the variable name as indicated in \emph{ImpVariables}.}
 
 \item{Consequents}{the zero-order TSK fuzzy rule consequents.}
 }

@@ -11,7 +11,7 @@ PlotMF(FRBS, n.pt = 9999, data = NULL, Title = NULL)
 
 \item{n.pt}{number of points/resolution used to plot each membership function.}
 
-\item{data}{the training datataset in *data.frame* format.}
+\item{data}{the training datataset in \emph{data.frame} format.}
 
 \item{Title}{the figure title.}
 }
