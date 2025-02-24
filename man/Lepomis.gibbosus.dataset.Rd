@@ -3,7 +3,7 @@
 \docType{data}
 \name{Lepomis.gibbosus.dataset}
 \alias{Lepomis.gibbosus.dataset}
-\title{Microhabitat use of Lepomis gibbosus}
+\title{Microhabitat use of \emph{Lepomis gibbosus}}
 \format{
 A data frame with 11 variables:
 

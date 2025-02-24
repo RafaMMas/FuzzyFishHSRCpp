@@ -1,4 +1,4 @@
-#' Microhabitat use of Lepomis gibbosus
+#' Microhabitat use of *Lepomis gibbosus*
 #'
 #' This dataset contains environmental and habitat-related variables for species observations, including velocity, depth, and various cover types.
 #'
