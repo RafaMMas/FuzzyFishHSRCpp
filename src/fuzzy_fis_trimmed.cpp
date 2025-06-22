@@ -104,6 +104,22 @@ double computeMembership(double x, std::string type, NumericVector params) {
 //
 // The function constructs the full rule base (as the cross-product of the MFs for each variable),
 // computes rule activations (using product aggregation), and defuzzifies via weighted average.
+//' Evaluate Fuzzy Inference System (FIS) Using C++
+//'
+//' @description
+//' This function evaluates a fuzzy inference system (FIS) using C++ for improved computational efficiency.
+//' It processes input data through specified membership functions and rule consequents, applying fuzzy logic to compute outputs.
+//'
+//' @param inputData A numeric matrix where each row represents an input vector to be evaluated.
+//' @param membershipFunctions A list of membership functions defining the fuzzy sets for the input variables.
+//' @param ruleConsequents A list of fuzzy rule consequents that determine the system's output based on the applied rules.
+//' @return A numeric matrix where the first column contains the computed output values, and the remaining columns indicate the degree of membership to each fuzzy rule.
+//'
+//' @details
+//' The function utilizes fuzzy logic to evaluate input data against predefined membership functions and rule consequents.  
+//' The output includes both the computed fuzzy output and rule memberships, aiding interpretability in fuzzy inference systems.
+//'
+//' @export
 // [[Rcpp::export]]
 NumericMatrix evaluateFIS_cpp(DataFrame inputData,
                               List membershipFunctions,
