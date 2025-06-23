@@ -112,23 +112,26 @@ computeMFValue <- function(x, type, params) {
 #' @param main Character. Plot title. If \code{NULL}, a title will be generated automatically.
 #' @param xlab Character. Label for the x-axis.
 #' @param ylab Character. Label for the y-axis.
-#' @param legend Logical. If \code{TRUE}, a legend is added to the plot; if \code{FALSE}, it is omitted.
+#' @param Legend Logical. If \code{TRUE}, a legend is added to the plot; if \code{FALSE}, it is omitted.
 #' @param ... Additional graphical parameters passed to \code{\link[graphics]{plot}}.
 #'
 #' @return A plot of membership functions for one variable.
 #'
 #' @examples
 #' mfList <- list(
-#'   list(type = "trimf", params = c(0, 0.5, 1)),
-#'   list(type = "gaussmf", params = c(0.5, 0.1))
+#'   list(type = "gaussmf", params = c(0.25, 0.1)),
+#'   list(type = "gaussmf", params = c(0.75, 0.1))
 #' )
-#' plotVariableMFs(mfList, variableName = "Example Variable")
+#' 
+#' inputLimits <- list(X1 = c(-0.25, 1.25))
+#' 
+#' plotVariableMFs(mfList, variableName = "Example Variable", xlim = inputLimits)
 #'
 #' @export
-plotVariableMFs <- function(mfList, variableName = "", xlim = c(0, 1), n = 100,
+plotVariableMFs <- function(mfList, variableName = "", xlim = NULL, n = 100,
                             colors = NULL, lwd = 2, main = NULL,
                             xlab = "x", ylab = "Membership", Legend = TRUE, ...) {
-  x <- seq(xlim[1], xlim[2], length.out = n)
+  x <- seq(xlim[[1]][1], xlim[[1]][2], length.out = n)
   if (is.null(colors)) {
     colors <- grDevices::rainbow(length(mfList))
   }
@@ -174,17 +177,20 @@ plotVariableMFs <- function(mfList, variableName = "", xlim = c(0, 1), n = 100,
 #'
 #' @examples
 #' mf1 <- list(
-#'   list(type = "trimf", params = c(0, 0.5, 1)),
-#'   list(type = "gaussmf", params = c(0.5, 0.1))
+#'   list(type = "gaussmf", params = c(0.25, 0.1)),
+#'   list(type = "gaussmf", params = c(0.75, 0.1))
 #' )
 #' mf2 <- list(
 #'   list(type = "trapmf", params = c(0, 0.3, 0.7, 1)),
-#'   list(type = "sigmf", params = c(10, 0.5))
+#'   list(type = "trapmf", params = c(0.7, 1, 1.5, 2))
 #' )
-#' plotAllMFs(list(mf1, mf2), varNames = c("X1", "X2"))
+#' 
+#' inputLimits <- list(X1 = c(-0.25, 1.25), X2 = c(0, 2))
+#'
+#' plotAllMFs(list(mf1, mf2), varNames = c("X1", "X2"), xlim = inputLimits)
 #'
 #' @export
-plotAllMFs <- function(membershipFunctions, varNames = NULL, xlim = c(0, 1), n = 100,
+plotAllMFs <- function(membershipFunctions, varNames = NULL, xlim = NULL, n = 100,
                        colors = NULL, lwd = 2, main = NULL,
                        xlab = "x", ylab = "Membership", ...) {
   nVars <- length(membershipFunctions)
@@ -200,8 +206,8 @@ plotAllMFs <- function(membershipFunctions, varNames = NULL, xlim = c(0, 1), n =
   for (i in seq_along(membershipFunctions)) {
     plotVariableMFs(membershipFunctions[[i]],
                     variableName = varNames[i],
-                    xlim = xlim, n = n, colors = colors,
-                    lwd = lwd, main = paste(main, "-", varNames[i]),
+                    xlim = xlim[i], n = n, colors = colors,
+                    lwd = lwd, main = paste(main, ifelse(is.null(main), "", "-"), varNames[i]),
                     xlab = xlab, ylab = ylab, ...)
   }
   

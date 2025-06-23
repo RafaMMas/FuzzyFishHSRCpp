@@ -7,7 +7,7 @@
 plotVariableMFs(
   mfList,
   variableName = "",
-  xlim = c(0, 1),
+  xlim = NULL,
   n = 100,
   colors = NULL,
   lwd = 2,
@@ -38,9 +38,9 @@ with components \code{type} (character) and \code{params} (numeric vector).}
 
 \item{ylab}{Character. Label for the y-axis.}
 
-\item{...}{Additional graphical parameters passed to \code{\link[graphics]{plot}}.}
+\item{Legend}{Logical. If \code{TRUE}, a legend is added to the plot; if \code{FALSE}, it is omitted.}
 
-\item{legend}{Logical. If \code{TRUE}, a legend is added to the plot; if \code{FALSE}, it is omitted.}
+\item{...}{Additional graphical parameters passed to \code{\link[graphics]{plot}}.}
 }
 \value{
 A plot of membership functions for one variable.
@@ -54,9 +54,12 @@ base R plotting. Each curve is labeled in a legend according to its type and par
 }
 \examples{
 mfList <- list(
-  list(type = "trimf", params = c(0, 0.5, 1)),
-  list(type = "gaussmf", params = c(0.5, 0.1))
+  list(type = "gaussmf", params = c(0.25, 0.1)),
+  list(type = "gaussmf", params = c(0.75, 0.1))
 )
-plotVariableMFs(mfList, variableName = "Example Variable")
+
+inputLimits <- list(X1 = c(-0.25, 1.25))
+
+plotVariableMFs(mfList, variableName = "Example Variable", xlim = inputLimits)
 
 }
