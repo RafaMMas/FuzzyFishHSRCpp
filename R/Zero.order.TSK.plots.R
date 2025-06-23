@@ -112,6 +112,7 @@ computeMFValue <- function(x, type, params) {
 #' @param main Character. Plot title. If \code{NULL}, a title will be generated automatically.
 #' @param xlab Character. Label for the x-axis.
 #' @param ylab Character. Label for the y-axis.
+#' @param legend Logical. If \code{TRUE}, a legend is added to the plot; if \code{FALSE}, it is omitted.
 #' @param ... Additional graphical parameters passed to \code{\link[graphics]{plot}}.
 #'
 #' @return A plot of membership functions for one variable.
@@ -126,7 +127,7 @@ computeMFValue <- function(x, type, params) {
 #' @export
 plotVariableMFs <- function(mfList, variableName = "", xlim = c(0, 1), n = 100,
                             colors = NULL, lwd = 2, main = NULL,
-                            xlab = "x", ylab = "Membership Degree", ...) {
+                            xlab = "x", ylab = "Membership", Legend = TRUE, ...) {
   x <- seq(xlim[1], xlim[2], length.out = n)
   if (is.null(colors)) {
     colors <- grDevices::rainbow(length(mfList))
@@ -144,9 +145,9 @@ plotVariableMFs <- function(mfList, variableName = "", xlim = c(0, 1), n = 100,
     mf <- mfList[[i]]
     y <- computeMFValue(x, mf$type, mf$params)
     graphics::lines(x, y, col = colors[i], lwd = lwd)
-    legendText[i] <- paste0(mf$type, " (", paste(mf$params, collapse = ","), ")")
+    legendText[i] <- paste0(mf$type, " (", paste(round(mf$params,1), collapse = ","), ")")
   }
-  
+  if(Legend == T)
   graphics::legend("topright", legend = legendText, col = colors, lwd = lwd, cex = 0.8)
 }
 
@@ -184,8 +185,8 @@ plotVariableMFs <- function(mfList, variableName = "", xlim = c(0, 1), n = 100,
 #'
 #' @export
 plotAllMFs <- function(membershipFunctions, varNames = NULL, xlim = c(0, 1), n = 100,
-                       colors = NULL, lwd = 2, main = "Membership Functions",
-                       xlab = "x", ylab = "Membership Degree", ...) {
+                       colors = NULL, lwd = 2, main = NULL,
+                       xlab = "x", ylab = "Membership", ...) {
   nVars <- length(membershipFunctions)
   if (is.null(varNames)) {
     varNames <- paste0("Variable ", seq_len(nVars))
