@@ -1,3 +1,36 @@
+#' Hill-Climbing Optimization with Restarts
+#'
+#' Performs an extended version of the hill-climbing algorithm with support
+#' for multiple random restarts. This optimization method iteratively explores
+#' neighboring sequences in search of a maximum or minimum of a user-defined
+#' objective function.
+#'
+#' @param func A function that takes a numeric vector as input and returns a scalar value.
+#'   This is the objective function to be optimized.
+#' @param values A numeric vector specifying the allowed values in the solution sequence.
+#'   Defaults to \code{c(0, 0.2, 0.4, 0.6, 0.8, 1)}.
+#' @param size An integer specifying the length of the solution sequence.
+#' @param mode A character string indicating whether to \code{"max"}imize or \code{"min"}imize
+#'   the objective function. Default is \code{"max"}.
+#' @param restarts An integer specifying how many independent random restarts to perform.
+#'   Higher values increase the chance of escaping local optima. Default is 1.
+#' @param seed Optional integer seed for reproducibility of random number generation.
+#'
+#' @return A list with two elements:
+#'   \describe{
+#'     \item{\code{optimal_sequence}}{The best sequence of values found across all restarts.}
+#'     \item{\code{optimal_value}}{The corresponding value of the objective function.}
+#'   }
+#'
+#' @examples
+#' # Define a simple objective function
+#' f <- function(x) -sum((x - 0.5)^2)
+#'
+#' # Run hill-climbing to maximize f
+#' result <- Hill.climbing.extended(f, size = 6, restarts = 5, seed = 42)
+#' print(result)
+#'
+#' @export
 Hill.climbing.extended <- function(func, values = c(0, 0.2, 0.4, 0.6, 0.8, 1), size = 8, mode = "max", restarts = 1, seed = NULL) {
   if (!mode %in% c("max", "min")) stop("mode must be 'max' or 'min'")
   if (!is.null(seed)) set.seed(seed)  # Set seed for reproducibility

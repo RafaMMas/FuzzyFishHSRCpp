@@ -1,3 +1,47 @@
+#' Generate Fuzzy Partitions for Input Variables
+#'
+#' Constructs fuzzy membership functions (MFs) for each input variable using
+#' predefined breakpoints and a specified MF type.
+#'
+#' The function supports `trimf`, `trapmf`, and `pimf` types, and generates
+#' fuzzy sets based on user-defined values and input limits. This is typically
+#' used for building interpretable fuzzy systems.
+#'
+#' @param values A numeric vector of breakpoint values used to construct the MFs.
+#'   Must contain the correct number of parameters based on the MF type and number
+#'   of fuzzy sets for each variable.
+#' @param var_names A character vector with names of the input variables.
+#' @param mf_type A character string specifying the type of membership function.
+#'   Must be one of \code{"trimf"}, \code{"trapmf"}, or \code{"pimf"}.
+#' @param num_fuzzy_sets An integer vector giving the number of fuzzy sets per variable.
+#'   Must be the same length as \code{var_names}.
+#' @param inputLimits A list of numeric vectors (length 2) specifying the minimum and maximum
+#'   values for each input variable.
+#' @param extreme_values A numeric vector of length 2 specifying the artificial minimum and
+#'   maximum bounds used to pad the breakpoint vector. Default is \code{c(-999, 999)}.
+#'
+#' @return A named list of fuzzy partitions. Each element is a list of fuzzy sets
+#'   (vectors of parameters), with variable names as list names.
+#'
+#' @examples
+#' # Example with two variables, both with 3 fuzzy sets and trimf type
+#' values <- seq(0.2, 0.8, length.out = 8)  # Adjusted to match required param count
+#' var_names <- c("Temperature", "Humidity")
+#' mf_type <- "trimf"
+#' num_fuzzy_sets <- c(3, 3)
+#' inputLimits <- list(c(0, 1), c(0, 1))
+#'
+#' fuzzy_partitions <- Generate.fuzzy.partitions(
+#'   values = values,
+#'   var_names = var_names,
+#'   mf_type = mf_type,
+#'   num_fuzzy_sets = num_fuzzy_sets,
+#'   inputLimits = inputLimits
+#' )
+#'
+#' str(fuzzy_partitions)
+#'
+#' @export
 Generate.fuzzy.partitions <- function(values, var_names, mf_type, num_fuzzy_sets, inputLimits, extreme_values = c(-999, 999)) {
   # Validate MF type
   if (!(mf_type %in% c("trimf", "trapmf", "pimf"))) {
