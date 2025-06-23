@@ -2,6 +2,7 @@
 #'
 #' This dataset contains environmental and habitat-related variables for species observations, including velocity, depth, and various cover types.
 #'
+#' @docType data
 #' @format A data frame with 11 variables:
 #' 
 #' \describe{
@@ -20,9 +21,11 @@
 #'
 #' @usage data(Lepomis.gibbosus.dataset)
 #' 
+#' @keywords datasets
+#' 
 #' @references
-#' Mu\ifelse{html}{\out{&ntilde;}}{\enc{UTF-8}{ñ}}oz-Mas, R., Macian-Sorribes, H., Oliva-Paterna, F. J.,
-#' Sangelantoni, L., Peano, D., Pulido-Velazquez, M., & Mart\ifelse{html}{\out{&iacute;}}{\enc{UTF-8}{í}}nez-Capel, F. (2024).
+#' Muñoz-Mas, R., Macian-Sorribes, H., Oliva-Paterna, F. J.,
+#' Sangelantoni, L., Peano, D., Pulido-Velazquez, M., & Martínez-Capel, F. (2024).
 #' Adaptation measures to global change in the Serpis River Basin (Spain): An evaluation considering agricultural benefits,
 #' environmental flows, and invasive fishes. \emph{Ecological Indicators}, 161, 111979.
 #' DOI: 10.1016/j.ecolind.2024.111979
@@ -30,27 +33,33 @@
 #' @examples
 #' data(Lepomis.gibbosus.dataset)
 #' summary(Lepomis.gibbosus.dataset)
-#'
 "Lepomis.gibbosus.dataset"
 
-
-#' Optimal Fuzzy Rule-Based System (FRBS) Model for *Lepomis gibbosus*  
-#'  
-#' This object represents the optimal FRBS model developed for predicting the habitat suitability  
-#' of *Lepomis gibbosus* based velocity, depth, substrate and cover.  
-#'  
+#' Optimal Fuzzy Rule-Based System (FRBS) Model for *Lepomis gibbosus*
+#'
+#' This object represents the optimal FRBS model developed for predicting the habitat suitability
+#' of *Lepomis gibbosus* based on velocity, depth, substrate, and cover.
+#'
 #' @name Lepomis.gibbosus.FRBS
-#'   
-#' @docType list
-#'   
+#' @docType data
 #' @keywords datasets
-#' 
+#'
+#' @format A named list with components:
+#' \describe{
+#'   \item{input.mf}{List of membership functions for input variables}
+#'   \item{rules}{Matrix of fuzzy rules}
+#'   \item{method}{Character string describing the inference method}
+#'   \item{output.mf}{List of membership functions for output variables}
+#'   \item{range.data}{Numeric matrix specifying the variable limits}
+#'   # Add more components as needed
+#' }
+#'
 #' @references
-#' Mu\ifelse{html}{\out{&ntilde;}}{\enc{UTF-8}{ñ}}oz-Mas, R., Macian-Sorribes, H., Oliva-Paterna, F. J.,
-#' Sangelantoni, L., Peano, D., Pulido-Velazquez, M., & Mart\ifelse{html}{\out{&iacute;}}{\enc{UTF-8}{í}}nez-Capel, F. (2024).
+#' Muñoz-Mas, R., Macian-Sorribes, H., Oliva-Paterna, F. J.,
+#' Sangelantoni, L., Peano, D., Pulido-Velazquez, M., & Martínez-Capel, F. (2024).
 #' Adaptation measures to global change in the Serpis River Basin (Spain): An evaluation considering agricultural benefits,
 #' environmental flows, and invasive fishes. \emph{Ecological Indicators}, 161, 111979.
 #' DOI: 10.1016/j.ecolind.2024.111979
 #'
-#' @usage data(Lepomis.gibbosus.FRBS)  
-NULL  
+#' @usage data(Lepomis.gibbosus.FRBS)
+NULL 
