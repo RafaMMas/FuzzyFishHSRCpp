@@ -13,7 +13,8 @@ plotVariableMFs(
   lwd = 2,
   main = NULL,
   xlab = "x",
-  ylab = "Membership Degree",
+  ylab = "Membership",
+  Legend = TRUE,
   ...
 )
 }
@@ -38,6 +39,8 @@ with components \code{type} (character) and \code{params} (numeric vector).}
 \item{ylab}{Character. Label for the y-axis.}
 
 \item{...}{Additional graphical parameters passed to \code{\link[graphics]{plot}}.}
+
+\item{legend}{Logical. If \code{TRUE}, a legend is added to the plot; if \code{FALSE}, it is omitted.}
 }
 \value{
 A plot of membership functions for one variable.

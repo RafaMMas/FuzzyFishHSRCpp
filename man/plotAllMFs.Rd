@@ -11,9 +11,9 @@ plotAllMFs(
   n = 100,
   colors = NULL,
   lwd = 2,
-  main = "Membership Functions",
+  main = NULL,
   xlab = "x",
-  ylab = "Membership Degree",
+  ylab = "Membership",
   ...
 )
 }
