@@ -38,7 +38,6 @@
 #'                            Rescale = FALSE)
 #'
 #' @export
-
 Weighted.mean.optimisation <- function(Observed.output,
                                        data,
                                        FRBS,
