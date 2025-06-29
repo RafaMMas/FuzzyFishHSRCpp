@@ -20,23 +20,6 @@
 #' Then, it computes the weighted mean of the observed outputs per rule, using membership degrees (and optional case weights)
 #' as weights. Optionally, the consequents can be rescaled and/or clipped using `Max.value` and `Min.value`.
 #'
-#' @examples
-#' Observed.output = DB[,4]
-#' data = DB[,-4]
-#' FRBS = New.FRBSs.type
-#' case.weights = NULL
-#' Max.value = 1
-#' Min.value = NULL
-#' Rescale = FALSE
-#' case.weights = c(1/table(DB[,4]))[as.character(DB[,4])]
-#' Weighted.mean.optimisation(Observed.output,
-#'                            data,
-#'                            FRBS,
-#'                            case.weights,
-#'                            Max.value = 1,
-#'                            Min.value = NULL,
-#'                            Rescale = FALSE)
-#'
 #' @export
 Weighted.mean.optimisation <- function(Observed.output,
                                        data,

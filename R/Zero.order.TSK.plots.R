@@ -199,8 +199,8 @@ plotAllMFs <- function(membershipFunctions, varNames = NULL, xlim = NULL, n = 10
   }
   
   # Set up plotting area: one panel per variable
-  op <- par(no.readonly = TRUE)
-  par(mfrow = c(ceiling(sqrt(nVars)), ceiling(nVars / ceiling(sqrt(nVars)))))
+  op <- graphics::par(no.readonly = TRUE)
+  graphics::par(mfrow = c(ceiling(sqrt(nVars)), ceiling(nVars / ceiling(sqrt(nVars)))))
   
   # Plot membership functions for each variable
   for (i in seq_along(membershipFunctions)) {
@@ -212,5 +212,5 @@ plotAllMFs <- function(membershipFunctions, varNames = NULL, xlim = NULL, n = 10
   }
   
   # Reset plotting parameters
-  par(op)
+  graphics::par(op)
 }
