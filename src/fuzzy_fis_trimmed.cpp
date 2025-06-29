@@ -113,6 +113,7 @@ double computeMembership(double x, std::string type, NumericVector params) {
 //' @param inputData A numeric matrix where each row represents an input vector to be evaluated.
 //' @param membershipFunctions A list of membership functions defining the fuzzy sets for the input variables.
 //' @param ruleConsequents A list of fuzzy rule consequents that determine the system's output based on the applied rules.
+//' @param inputLimits A list specifying the universe of discourse limits for each input variable. Each element in the list corresponds to one input variable and defines its minimum and maximum values, as used in the fuzzy sets or membership functions. The package provides tools to create these limits. If an input value falls outside its specified range, it is automatically trimmed to the closest boundary (i.e., the defined minimum or maximum).
 //' @return A numeric matrix where the first column contains the computed output values, and the remaining columns indicate the degree of membership to each fuzzy rule.
 //'
 //' @details
