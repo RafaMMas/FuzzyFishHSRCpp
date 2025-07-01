@@ -44,7 +44,7 @@ Consequents <- apply(Membership, 2 , function(x)
     stats::weighted.mean(x = Observed.output, w = x*case.weights)
   })
 
-if(!is.null(Max.value)){
+if(!is.null(Rescale.to)){
   Consequents <- ((Consequents - min(Consequents))/(max(Consequents)-min(Consequents)))*(max(Rescale.to) - min(Rescale.to)) + min(Rescale.to)
 }
 
