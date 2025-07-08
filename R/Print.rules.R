@@ -34,19 +34,16 @@ Print.rules <- function(FRBS)
 {
   
   Rules <- expand.grid(sapply(rev(sapply(FRBS[[1]], length)), function(x){
-    
-    if(x > 5)
-      stop("the function is prepared for 5 fuzzy sets max.")
-    
-    if(x == 2)
-    {
+    if(x == 2){
       c("Low", "High")
     } else if(x == 3){
       c("Low", "Medium", "High")
     } else if( x == 4) { 
       c("Very low", "Low", "High", "Very high")
-    } else {
+    } else if( x == 5) { 
       c("Very low", "Low", "Medium", "High", "Very high")
+    } else {
+      paste("Set", 1:x)
     }
   }))  
   
